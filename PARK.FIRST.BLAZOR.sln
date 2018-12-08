@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PARK.FIRST.BLAZOR.Client", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PARK.FIRST.BLAZOR.Shared", "PARK.FIRST.BLAZOR.Shared\PARK.FIRST.BLAZOR.Shared.csproj", "{EA2B23B6-ACB1-4064-AB91-ECAB430858B9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorLib1", "BlazorLib1\BlazorLib1.csproj", "{7F5D44A5-A88E-4818-81BF-0A87BD280105}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EA2B23B6-ACB1-4064-AB91-ECAB430858B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA2B23B6-ACB1-4064-AB91-ECAB430858B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA2B23B6-ACB1-4064-AB91-ECAB430858B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5D44A5-A88E-4818-81BF-0A87BD280105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5D44A5-A88E-4818-81BF-0A87BD280105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5D44A5-A88E-4818-81BF-0A87BD280105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5D44A5-A88E-4818-81BF-0A87BD280105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

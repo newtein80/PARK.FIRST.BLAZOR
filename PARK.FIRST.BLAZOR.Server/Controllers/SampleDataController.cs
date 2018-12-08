@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PARK.FIRST.BLAZOR.Server.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {

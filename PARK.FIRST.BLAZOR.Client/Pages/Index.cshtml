@@ -1,7 +1,33 @@
 ﻿@page "/"
-
+@using BlazorLib1
 <h1>Hello, world!</h1>
 
+<h4>https://www.youtube.com/watch?v=L5wxqcPD9mI&list=PLFjq8z-aGyQ5WgFQSik2neFd33cCJLQ7o&index=3</h4>
 Welcome to your new app.
+<br />
+https://github.com/StuwiiDev/DotnetCoreJwtAuthentication
+<br />
+https://medium.com/ st.mas29/microsoft-blazor-web-api-with-jwt-authentication-part-1-f33a44abab9d
+<br />
+https://medium.com/ st.mas29/microsoft-blazor-web-api-with-jwt-authentication-part-2-414766cbdd0b
+<br />
+https://medium.com/ st.mas29/microsoft-blazor-web-api-with-jwt-authentication-part-3-8069757429b4
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<Component1/>
+
+<button onclick="@Prompt">Prompt</button>
+
+<p>@message</p>
+
+@functions{
+    string message;
+
+    async Task Prompt()
+    {
+        message = await ExampleJsInterop.Prompt("Hello !!");
+    }
+}
+
+<Counter IncrementAmount="10"/>

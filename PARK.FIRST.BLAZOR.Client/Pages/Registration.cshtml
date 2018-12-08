@@ -1,10 +1,11 @@
 ﻿@using PARK.FIRST.BLAZOR.Shared
-@page "/login"
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+@page "/registration"
 @inject HttpClient Http
 
 <div class="container">
     <h1>
-        Log in to JWT Authentication
+        Regist for JWT Authentication
     </h1>
     <div class="form-group">
         <label for="email">Email</label>
@@ -12,7 +13,7 @@
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" class="form-control" bind="@Password"/>
+        <input type="password" name="password" placeholder="Password" class="form-control" bind="@Password" />
     </div>
     <button onclick="@SubmitForm">Submit</button>
 </div>
@@ -20,7 +21,6 @@
 @functions{
     public string Email { get; set; } = "";
     public string Password { get; set; } = "";
-    public string Token { get; set; } = "";
 
     private async Task SubmitForm()
     {
@@ -30,9 +30,8 @@
             Password = Password
         };
 
-        var response = await Http.PostJsonAsync<object>("http://localhost:4891/api/Token/Login", vm);
+        await Http.PostJsonAsync("http://localhost:4891/api/Token/Registration", vm);
 
-        //Console.WriteLine($"{ Email} and {Password}");
-        Console.WriteLine(response);
+        UriHelper.NavigateTo("/login");
     }
 }

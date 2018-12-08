@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Blazor.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using PARK.FIRST.BLAZOR.Server.Data;
 using PARK.FIRST.BLAZOR.Server.Interface;
 using PARK.FIRST.BLAZOR.Server.Service;
 using System.Linq;
@@ -31,6 +34,13 @@ namespace PARK.FIRST.BLAZOR.Server
             services.AddMvc();
 
             services.AddTransient<IJwtTokenService, JwtTokenService>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //Setting up Jwt Authentication
             services.AddAuthentication(options =>

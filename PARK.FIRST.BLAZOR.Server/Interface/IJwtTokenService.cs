@@ -8,5 +8,7 @@ namespace PARK.FIRST.BLAZOR.Server.Interface
     public interface IJwtTokenService
     {
         string BuildToken(string email);
+        //Task SaveAccessToken(string accessToken);
+        //Task<string> GetAccessToken();
     }
 }
